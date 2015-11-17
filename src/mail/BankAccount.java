@@ -1,7 +1,7 @@
 package mail;
 
 public class BankAccount {
-	protected int amount;
+	protected double amount;
 	protected Inhabitant owner;
 	
 	public BankAccount(int amount, Inhabitant owner) {
@@ -9,15 +9,15 @@ public class BankAccount {
 		this.owner = owner;
 	}
 	
-	public void credit(int amount) {
+	public void credit(double amount) {
 		this.amount += amount;
 	}
 	
-	public void debit(int amount) {
+	public void debit(double amount) {
 		this.amount -= amount;
 	}
 
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
 

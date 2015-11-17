@@ -2,10 +2,8 @@ package mail;
 
 public class SimpleLetter extends Letter<TextContent> {
 	protected final int COST_SIMPLE_LETTER = 1;
-	protected TextContent content;
 	
 	public SimpleLetter(String content) {
-		super();
 		this.content = new TextContent(content);
 	}
 
@@ -16,7 +14,6 @@ public class SimpleLetter extends Letter<TextContent> {
 
 	@Override
 	public void doAction() {
-		// TODO Auto-generated method stub
 		
 	}
 }

@@ -14,11 +14,15 @@ public class City {
 	}
 
 	public void sendLetter(Letter<Content> letter) {
+		letter.getSender().getBankAccount().debit(letter.getCost());
 		this.postbox.add(letter);
 	}
 	
 	public void distributeLetters() {
-		
+		for(Letter<Content> letter: postbox) {
+			letter.doAction();
+			this.postbox.remove(letter);
+		}
 	}
 	
 	public String getName() {
