@@ -1,5 +1,4 @@
-# courriers
-
+# mails
 ## Contributeurs
 
 * [Laurent Thiebault](https://github.com/lauthieb)
