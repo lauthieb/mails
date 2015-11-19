@@ -17,5 +17,10 @@ public abstract class Letter<C extends Content> {
 		return receiver;
 	}
 	
+	@Override
+	public String toString() {
+		return ""+this.content;
+	}
+	
 	
 }

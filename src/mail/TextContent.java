@@ -7,4 +7,10 @@ public class TextContent extends Content{
 		this.text = text;
 	}
 
+	@Override
+	public String toString() {
+		return "text content (" + this.text + ")";
+		
+	}
+	
 }

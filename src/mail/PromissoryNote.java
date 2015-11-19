@@ -19,5 +19,11 @@ public class PromissoryNote extends Letter<MoneyContent> {
 		SimpleLetter thanksLetter = new SimpleLetter("thanks for a promissory note letter whose content is a money content (" + this.content.getAmount() + ")");
 		this.receiver.getCity().sendLetter(thanksLetter);
 	}
+	
+	@Override
+	public String toString() {
+		return "promissory note letter whose content is a " + this.content;
+		
+	}
 
 }

@@ -10,5 +10,11 @@ public class MoneyContent extends Content {
 	public double getAmount() {
 		return amount;
 	}
+	
+	@Override
+	public String toString() {
+		return "money content (" + this.amount + ")";
+		
+	}
 
 }
