@@ -5,21 +5,21 @@ import java.util.List;
 public class City {
 	protected String name;
 	protected List<Inhabitant> inhabitants;
-	protected List<Letter<Content>> postbox;
+	protected List<Letter<?>> postbox;
 	
-	public City(String name, List<Inhabitant> inhabitants, List<Letter<Content>> postbox) {
+	public City(String name, List<Inhabitant> inhabitants, List<Letter<?>> postbox) {
 		this.name = name;
 		this.inhabitants = inhabitants;
 		this.postbox = postbox;
 	}
 
-	public void sendLetter(Letter<Content> letter) {
+	public void sendLetter(Letter<?> letter) {
 		letter.getSender().getBankAccount().debit(letter.getCost());
 		this.postbox.add(letter);
 	}
 	
 	public void distributeLetters() {
-		for(Letter<Content> letter: postbox) {
+		for(Letter<?> letter: postbox) {
 			letter.doAction();
 			this.postbox.remove(letter);
 		}
@@ -33,7 +33,7 @@ public class City {
 		return inhabitants;
 	}
 	
-	public List<Letter<Content>> getPostbox() {
+	public List<Letter<?>> getPostbox() {
 		return postbox;
 	}
 	
