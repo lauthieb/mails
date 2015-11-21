@@ -14,7 +14,6 @@ public class MoneyContent extends Content {
 	@Override
 	public String toString() {
 		return "money content (" + this.amount + ")";
-		
 	}
 
 }

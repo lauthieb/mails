@@ -8,7 +8,7 @@ public class PromissoryNote extends Letter<MoneyContent> {
 
 	@Override
 	public double getCost() {
-		return 1 + (0.01 * this.content.getAmount());
+		return COST_LETTER + (0.01 * this.content.getAmount());
 	}
 
 	@Override
@@ -23,7 +23,6 @@ public class PromissoryNote extends Letter<MoneyContent> {
 	@Override
 	public String toString() {
 		return "promissory note letter whose content is a " + this.content;
-		
 	}
 
 }

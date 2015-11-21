@@ -11,4 +11,9 @@ public class LetterContent extends Content {
 		return this.letter;
 	}
 	
+	@Override
+	public String toString() {
+		return "letter content (" + this.letter.getContent() + ")";
+	}
+	
 }

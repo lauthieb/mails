@@ -4,6 +4,7 @@ public abstract class Letter<C extends Content> {
 	protected C content;
 	protected Inhabitant sender;
 	protected Inhabitant receiver;
+	protected final int COST_LETTER = 1;
 	
 	public abstract double getCost();
 	public abstract void doAction();
