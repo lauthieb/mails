@@ -8,6 +8,7 @@ public abstract class Letter<C extends Content> {
 	
 	public abstract double getCost();
 	public abstract void doAction();
+	//TODO: Se servir du pattern d'avant
 	public C getContent() {
 		return content;
 	}

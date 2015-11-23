@@ -1,5 +1,6 @@
 package mail;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class City {
@@ -7,10 +8,12 @@ public class City {
 	protected List<Inhabitant> inhabitants;
 	protected List<Letter<?>> postbox;
 	
-	public City(String name, List<Inhabitant> inhabitants, List<Letter<?>> postbox) {
+	public City(String name, List<Inhabitant> inhabitants) {
+		//TODO : créer une liste de Letter ici au lieu de le passer en paramètre
 		this.name = name;
 		this.inhabitants = inhabitants;
-		this.postbox = postbox;
+		this.postbox = new ArrayList<Letter<?>>(); {
+		};
 	}
 
 	public void sendLetter(Letter<?> letter) {

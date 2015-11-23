@@ -5,10 +5,15 @@ public class Inhabitant {
 	protected City city;
 	protected BankAccount bankAccount;
 	
-	public Inhabitant(String name, City city, BankAccount bankAccount) {
+	public Inhabitant(String name, City city) {
+		
 		this.name = name;
 		this.city = city;
-		this.bankAccount = bankAccount;
+		//TODO : Créér le compte de l'habitant ici, créer une nouvelle instance ici
+		//BankAccount vide de base ? 
+		//Ou valeur aléatoire ?
+		this.bankAccount = new BankAccount(0, this);
+		//this.bankAccount = bankAccount;
 	}
 	
 	public String getName() {
