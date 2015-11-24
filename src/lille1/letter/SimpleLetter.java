@@ -1,4 +1,6 @@
-package mail;
+package lille1.letter;
+
+import lille1.content.TextContent;
 
 public class SimpleLetter extends Letter<TextContent> {
 	

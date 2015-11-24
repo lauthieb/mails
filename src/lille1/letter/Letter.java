@@ -1,4 +1,7 @@
-package mail;
+package lille1.letter;
+
+import lille1.global.Content;
+import lille1.global.Inhabitant;
 
 public abstract class Letter<C extends Content> {
 	protected C content;

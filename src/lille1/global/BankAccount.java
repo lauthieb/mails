@@ -1,4 +1,4 @@
-package mail;
+package lille1.global;
 
 public class BankAccount {
 	protected double amount;

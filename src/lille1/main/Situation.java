@@ -1,7 +1,11 @@
-package mail;
+package lille1.main;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import lille1.global.City;
+import lille1.global.Inhabitant;
+import lille1.letter.Letter;
 
 public class Situation {
 	protected final static int SIMULATION_TIME = 6;
@@ -30,7 +34,7 @@ public class Situation {
 	
 	public static void generateLetters(City theCity) {
 		Random rand = new Random();
-		//We generate the number of inabitants who will send a letter
+		//We generate the number of inhabitants who will send a letter
 		int senderNumber = rand.nextInt(99)+1;
 		//For each selected inhabitant
 		for (int n=0; n<senderNumber; n++) {
@@ -39,7 +43,7 @@ public class Situation {
 			int sender = rand.nextInt(99)+1;
 			//We select the receiver between the hundred inhabitants
 			int receiver = rand.nextInt(99)+1;
-			generateLetter(theCity.inhabitants.get(sender), theCity.inhabitants.get(receiver));
+			generateLetter(theCity.getInhabitants().get(sender), theCity.getInhabitants().get(receiver));
 		}		
 	}
 	
@@ -67,6 +71,7 @@ public class Situation {
 			//Add the letter created inside a RegisteredLetter Instance
 			break;
 		}
+		return null;
 	}
 	
 	//Method initially created to create a random inhabitant

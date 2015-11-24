@@ -1,4 +1,4 @@
-package mail;
+package lille1.global;
 
 public class Inhabitant {
 	protected String name;
@@ -9,9 +9,9 @@ public class Inhabitant {
 		
 		this.name = name;
 		this.city = city;
-		//TODO : Créér le compte de l'habitant ici, créer une nouvelle instance ici
+		//TODO : Crï¿½ï¿½r le compte de l'habitant ici, crï¿½er une nouvelle instance ici
 		//BankAccount vide de base ? 
-		//Ou valeur aléatoire ?
+		//Ou valeur alï¿½atoire ?
 		this.bankAccount = new BankAccount(0, this);
 		//this.bankAccount = bankAccount;
 	}

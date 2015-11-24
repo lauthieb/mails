@@ -1,4 +1,7 @@
-package mail;
+package lille1.content;
+
+import lille1.global.Content;
+import lille1.letter.Letter;
 
 public class LetterContent extends Content {
 	protected Letter<?> letter;

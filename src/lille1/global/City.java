@@ -1,7 +1,9 @@
-package mail;
+package lille1.global;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import lille1.letter.Letter;
 
 public class City {
 	protected String name;
@@ -9,7 +11,7 @@ public class City {
 	protected List<Letter<?>> postbox;
 	
 	public City(String name, List<Inhabitant> inhabitants) {
-		//TODO : créer une liste de Letter ici au lieu de le passer en paramètre
+		//TODO : crï¿½er une liste de Letter ici au lieu de le passer en paramï¿½tre
 		this.name = name;
 		this.inhabitants = inhabitants;
 		this.postbox = new ArrayList<Letter<?>>(); {

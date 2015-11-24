@@ -1,4 +1,6 @@
-package mail;
+package lille1.letter;
+
+import lille1.content.LetterContent;
 
 public class RegisteredLetter extends Letter<LetterContent> {
 

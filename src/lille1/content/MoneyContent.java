@@ -1,4 +1,6 @@
-package mail;
+package lille1.content;
+
+import lille1.global.Content;
 
 public class MoneyContent extends Content {
 	protected double amount;
