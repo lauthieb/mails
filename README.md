@@ -1,4 +1,8 @@
-# mails
+mails
+=========
+
+Projet de COO en L3 MIAGE.
+
 ## Contributeurs
 
 * [Laurent Thiebault](https://github.com/lauthieb)
