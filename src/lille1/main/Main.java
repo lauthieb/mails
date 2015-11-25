@@ -12,7 +12,7 @@ public class Main {
 	protected final static int SIMULATION_TIME = 6;
 	protected final static int NB_INHABITANTS = 10;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		City lille = new City("Lille");
 		lille.createInhabitants(NB_INHABITANTS);
 		

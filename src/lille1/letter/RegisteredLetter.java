@@ -3,13 +3,13 @@ package lille1.letter;
 import lille1.content.LetterContent;
 import lille1.global.Inhabitant;
 
-public class RegisteredLetter extends SpecialLetter {
+public class RegisteredLetter<T extends Letter<?>> extends SpecialLetter<T> {
 
-	public RegisteredLetter(Letter<?> content, Inhabitant sender, Inhabitant receiver) throws Exception {
-		super(new LetterContent(content), sender, receiver);
-		if(content instanceof UrgentLetter) {
+	public RegisteredLetter(T letter) throws Exception {
+		super(letter);
+		if(content.getLetter() instanceof UrgentLetter) {
 			throw new Exception("content can't be an urgent letter");
-		} else if(content instanceof RegisteredLetter) {
+		} else if(content.getLetter() instanceof RegisteredLetter) {
 			throw new Exception("content can't be a registered letter");
 		}
 	}
