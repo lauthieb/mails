@@ -11,9 +11,9 @@ import lille1.letter.LetterTest;
 public class SimpleLetterTest extends LetterTest {
 
 	@Before
-	public void createLetter() {
+	public void createLetter() throws IllegalArgumentException {
 		super.createLetter();
-		letter = new RegisteredLetter(new SimpleLetter("Je suis une lettre dans un recommandé", sender, receiver), sender, receiver);
+		letter = new RegisteredLetter(new SimpleLetter("Je suis une lettre dans un recommandé", sender, receiver));
 	}
 
 	@Test

@@ -71,7 +71,7 @@ public class Main {
 		if (simple) {
 			sl = new SimpleLetter("bla bla", sender, receiver);
 			if (registered) {
-				rl = new RegisteredLetter(sl, sl.getSender(), sl.getReceiver());
+				rl = new RegisteredLetter(sl);
 				if (urgent) {
 					return null; // TODO
 				}
@@ -82,7 +82,7 @@ public class Main {
 			int amount = rand.nextInt(100)+1;
 			pn = new PromissoryNote(amount, sender, receiver);
 			if (registered) {
-				rl = new RegisteredLetter(pn, pn.getSender(), pn.getReceiver());
+				rl = new RegisteredLetter(pn);
 				if (urgent) {
 					return null;
 				}

@@ -5,10 +5,10 @@ import lille1.global.Inhabitant;
 
 public class UrgentLetter<T extends Letter<?>> extends SpecialLetter<T> {
 	
-	public UrgentLetter(T letter) throws Exception {
+	public UrgentLetter(T letter) throws IllegalArgumentException {
 		super(letter);
 		if(letter instanceof UrgentLetter) {
-			throw new Exception("content can't be an urgent letter");
+			throw new IllegalArgumentException("content can't be an urgent letter");
 		}
 	}
 

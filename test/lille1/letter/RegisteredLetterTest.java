@@ -11,7 +11,7 @@ public class RegisteredLetterTest extends LetterTest{
 	@Override
 	public void createLetter() {
 		super.createLetter();
-		letter = new RegisteredLetter(new SimpleLetter("Je suis une lettre dans un recommandé", sender, receiver), sender, receiver);
+		letter = new RegisteredLetter(new SimpleLetter("Je suis une lettre dans un recommandé", sender, receiver));
 	}
 	
 	@Test
