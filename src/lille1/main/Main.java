@@ -10,34 +10,43 @@ import lille1.letter.SimpleLetter;
 
 public class Main {
 	protected final static int SIMULATION_TIME = 6;
+	protected final static int NB_INHABITANTS = 10;
 
 	public static void main(String[] args) {
 		City lille = new City("Lille");
-		lille.createInhabitants(100);
+		lille.createInhabitants(NB_INHABITANTS);
 		
 		System.out.println("Mailing letters for " + SIMULATION_TIME + " days");
 		
 		for(int i=0; i < SIMULATION_TIME ; i++) {
 			System.out.println("**************************");
 			System.out.println("Day " + (i+1));
-			generateLetters(lille);
 			lille.distributeLetters();
+			generateLetters(lille);
 		}
 		
-		/*while(!lille.getPostbox().isEmpty()) {
-			
-		}*/
+		int day = SIMULATION_TIME + 1;
+		
+		while(!lille.getPostbox().isEmpty()) {
+			System.out.println("**************************");
+			System.out.println("Day " + day);
+			lille.distributeLetters();
+			day++;
+		}
 		
 	}
 	
 	public static void generateLetters(City city) {
 		Random rand = new Random();
 
-		int letterNumber = rand.nextInt(99)+1;
+		int letterNumber = rand.nextInt(NB_INHABITANTS);
 
 		for (int n=0; n < letterNumber; n++) {
-			int idSender = rand.nextInt(99)+1;
-			int idReceiver = rand.nextInt(99)+1;
+			int idSender = rand.nextInt(NB_INHABITANTS);
+			int idReceiver;
+			do {
+				idReceiver = rand.nextInt(NB_INHABITANTS);
+			} while(idReceiver == idSender);
 			city.sendLetter(generateLetter(city.getInhabitants().get(idSender), city.getInhabitants().get(idReceiver)));
 		}		
 	}
