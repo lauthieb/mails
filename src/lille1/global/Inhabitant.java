@@ -6,14 +6,9 @@ public class Inhabitant {
 	protected BankAccount bankAccount;
 	
 	public Inhabitant(String name, City city) {
-		
 		this.name = name;
 		this.city = city;
-		//TODO : Cr��r le compte de l'habitant ici, cr�er une nouvelle instance ici
-		//BankAccount vide de base ? 
-		//Ou valeur al�atoire ?
-		this.bankAccount = new BankAccount(0, this);
-		//this.bankAccount = bankAccount;
+		this.bankAccount = new BankAccount(5000, this);
 	}
 	
 	public String getName() {

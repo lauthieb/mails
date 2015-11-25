@@ -1,7 +1,7 @@
 package lille1.global;
 
 public class BankAccount {
-	protected double amount;
+	protected int amount;
 	protected Inhabitant owner;
 	
 	public BankAccount(int amount, Inhabitant owner) {
@@ -17,7 +17,7 @@ public class BankAccount {
 		this.amount -= amount;
 	}
 
-	public double getAmount() {
+	public int getAmount() {
 		return amount;
 	}
 

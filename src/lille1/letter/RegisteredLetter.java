@@ -9,7 +9,7 @@ public class RegisteredLetter extends Letter<LetterContent> {
 		super(new LetterContent(content), sender, receiver);
 	}
 
-	public double getCost() {
+	public int getCost() {
 		return (this.content.getLetter().getCost()+15);
 	}
 

@@ -5,13 +5,13 @@ import lille1.global.Inhabitant;
 
 public class PromissoryNote extends Letter<MoneyContent> {
 
-	public PromissoryNote(double content, Inhabitant sender, Inhabitant receiver) {
+	public PromissoryNote(int content, Inhabitant sender, Inhabitant receiver) {
 		super(new MoneyContent(content), sender, receiver);
 	}
 
 	@Override
-	public double getCost() {
-		return COST_LETTER + (0.01 * this.content.getAmount());
+	public int getCost() {
+		return (int) (COST_LETTER + (0.01 * this.content.getAmount()));
 	}
 
 	@Override
@@ -19,13 +19,13 @@ public class PromissoryNote extends Letter<MoneyContent> {
 		this.sender.getBankAccount().debit(this.content.getAmount());
 		this.receiver.getBankAccount().credit(this.content.getAmount());
 		
-		SimpleLetter thanksLetter = new SimpleLetter("thanks for a promissory note letter whose content is a money content (" + this.content.getAmount() + ")", this.receiver, this.sender);
+		ThanksLetter thanksLetter = new ThanksLetter("thanks for a promissory note letter whose content is a money content (" + this.content.getAmount() + ")", this.receiver, this.sender);
 		this.receiver.getCity().sendLetter(thanksLetter);
 	}
 	
 	@Override
 	public String toString() {
-		return "promissory note letter whose content is a " + this.content;
+		return "a promissory note letter whose content is a " + this.content;
 	}
 
 }

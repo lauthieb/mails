@@ -1,19 +1,19 @@
 package lille1.content;
 
 public class MoneyContent extends Content {
-	protected double amount;
+	protected int amount;
 
-	public MoneyContent(double amount) {
+	public MoneyContent(int amount) {
 		this.amount = amount;
 	}
 
-	public double getAmount() {
+	public int getAmount() {
 		return amount;
 	}
 	
 	@Override
 	public String toString() {
-		return "whose content is a money content (" + this.amount + ")";
+		return "money content (" + this.amount + ")";
 	}
 
 }

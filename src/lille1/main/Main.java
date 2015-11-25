@@ -1,6 +1,5 @@
 package lille1.main;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import lille1.global.City;
@@ -19,14 +18,15 @@ public class Main {
 		System.out.println("Mailing letters for " + SIMULATION_TIME + " days");
 		
 		for(int i=0; i < SIMULATION_TIME ; i++) {
-			System.out.println("********************");
+			System.out.println("**************************");
 			System.out.println("Day " + (i+1));
 			generateLetters(lille);
+			lille.distributeLetters();
 		}
 		
-		while(!lille.getPostbox().isEmpty()) {
+		/*while(!lille.getPostbox().isEmpty()) {
 			
-		}
+		}*/
 		
 	}
 	
@@ -50,7 +50,7 @@ public class Main {
 			case 0:
 				return new SimpleLetter("bla bla", sender, receiver);
 			case 1:
-				double amount = 10 * rand.nextDouble();
+				int amount = rand.nextInt(100)+1;
 				return new PromissoryNote(amount, sender, receiver);
 		}
 		return null;

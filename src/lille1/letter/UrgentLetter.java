@@ -10,7 +10,7 @@ public class UrgentLetter extends Letter<LetterContent> {
 	}
 
 	@Override
-	public double getCost() {
+	public int getCost() {
 		return COST_LETTER*2;
 	}
 

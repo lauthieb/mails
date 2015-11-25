@@ -20,11 +20,18 @@ public class City {
 	public void sendLetter(Letter<?> letter) {
 		letter.getSender().getBankAccount().debit(letter.getCost());
 		this.postbox.add(letter);
-		System.out.println("-> "+letter.getSender().getName()+" mails "+letter+" to "+letter.getReceiver().getName()+" a cost of "+letter.getCost()+" euro");
+		if(letter.getCost() > 1) {
+			System.out.println("-> " + letter.getSender().getName() + " mails " + letter + " to " + letter.getReceiver().getName() +" for a cost of " + letter.getCost() + " euros");
+			System.out.println("   - " + letter.getCost() + " euros are debited from " + letter.getSender().getName() + " account whose balance is now " + letter.getSender().getBankAccount().getAmount() + " euros");
+		} else {
+			System.out.println("-> " + letter.getSender().getName() + " mails " + letter + " to " + letter.getReceiver().getName() +" for a cost of " + letter.getCost() + " euro");
+			System.out.println("   - " + letter.getCost() + " euro are debited from " + letter.getSender().getName() + " account whose balance is now " + letter.getSender().getBankAccount().getAmount() + " euros");
+		}
 	}
 	
 	public void distributeLetters() {
-		for(Letter<?> letter: postbox) {
+		for(int i = 0; i < this.postbox.size(); i++) {
+			Letter<?> letter = this.postbox.get(i);
 			letter.doAction();
 			this.postbox.remove(letter);
 		}

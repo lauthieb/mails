@@ -15,7 +15,7 @@ public abstract class Letter<C extends Content> {
 		this.receiver = receiver;
 	}
 	
-	public abstract double getCost();
+	public abstract int getCost();
 	public abstract void doAction();
 
 	public C getContent() {
