@@ -2,7 +2,6 @@ package lille1.letter;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import lille1.content.TextContent;
@@ -10,7 +9,7 @@ import lille1.letter.LetterTest;
 
 public class SimpleLetterTest extends LetterTest {
 
-	@Before
+	@Override
 	public void createLetter() throws IllegalArgumentException {
 		super.createLetter();
 		letter = new SimpleLetter("Je suis une simple lettre dans la classe SimpleLetterTest", sender, receiver);
@@ -22,12 +21,11 @@ public class SimpleLetterTest extends LetterTest {
 	}
 	
 	@Override
-	@Test
 	public void testGetCost() {
 		assertEquals(1, letter.getCost());
 	}
 
-	@Test
+	@Override
 	public void testToString() {
 		assertEquals("a simple letter whose content is a text content (Je suis une simple lettre dans la classe SimpleLetterTest)", letter.toString());
 	}

@@ -7,25 +7,23 @@ import org.junit.Test;
 
 public class RegisteredLetterTest extends LetterTest{
 
-	@Before
 	@Override
 	public void createLetter() {
 		super.createLetter();
 		letter = new RegisteredLetter<SimpleLetter>(new SimpleLetter("Je suis une lettre dans un recommandé", sender, receiver));
 	}
 	
-	@Test
 	@Override
 	public void testGetCost() {
 		assertEquals(16,letter.getCost());	// Content is : SimpleLetter
 	}
 
-	@Test
+	@Override
 	public void testDoAction() {
 		//TODO
 	}
 
-	@Test
+	@Override
 	public void testToString() {
 		assertEquals("a registered letter whose content is a simple letter whose content is a text content (Je suis une lettre dans un recommandé)",letter.toString());
 	}

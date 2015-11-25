@@ -8,6 +8,7 @@ public class PromissoryNoteTest extends LetterTest {
 
 	int amount = 123;
 	
+	@Override
 	public void createLetter() {
 		super.createLetter();
 		try {
@@ -17,17 +18,17 @@ public class PromissoryNoteTest extends LetterTest {
 		}
 	}
 	
-	@Test
+	@Override
 	public void testGetCost() {
 		assertEquals(2,letter.getCost());
 	}
 
-	@Test
+	@Override
 	public void testDoAction() {
 		//TODO
 	}
 
-	@Test
+	@Override
 	public void testToString() {
 		assertEquals("a promissory note letter whose content is a money content (" + amount + ")", letter.toString());
 	}

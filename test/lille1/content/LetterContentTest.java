@@ -2,28 +2,25 @@ package lille1.content;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import lille1.letter.SimpleLetter;
 
-public class LetterContentTest {
+public class LetterContentTest extends ContentTest {
 	
 	protected LetterContent content;
 	protected SimpleLetter letter;
 	
-	@Before
-	public void init() {
+	@Override
+	public void createContent() {
 		this.letter = new SimpleLetter("hello", null, null);
-		this.content = new LetterContent(this.letter);
+		this.content = new LetterContent(this.letter);	
 	}
 
-	@Test
+	@Override
 	public void contentIsCorrectlyInitialized() {
 		assertEquals(this.letter, this.content.getLetter());
 	}
 
-	@Test
+	@Override
 	public void testToString() {
 		assertEquals("a simple letter whose content is a text content (hello)", this.content.toString());
 	}

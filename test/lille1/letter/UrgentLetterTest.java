@@ -7,7 +7,6 @@ import org.junit.Test;
 
 public class UrgentLetterTest extends SpecialLetterTest {
 
-	@Before
 	@Override
 	public void createLetter() {
 		try {
@@ -17,17 +16,17 @@ public class UrgentLetterTest extends SpecialLetterTest {
 		}
 	}
 	
-	@Test
+	@Override
 	public void testGetCost() {
 		assertEquals(2,letter.getCost());
 	}
 
-	@Test
+	@Override
 	public void testDoAction() {
 		//TODO
 	}
 
-	@Test
+	@Override
 	public void testToString() {
 		assertEquals("an urgent letter whose content is a simple letter whose content is a text content (Je suis une simple lettre dans une lettre urgente)", this.letter.toString());
 	}
