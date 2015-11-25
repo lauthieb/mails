@@ -12,7 +12,7 @@ import lille1.letter.UrgentLetter;
 
 public class Main {
 	protected final static int SIMULATION_TIME = 6;
-	protected final static int NB_INHABITANTS = 10;
+	protected final static int NB_INHABITANTS = 100;
 
 	public static void main(String[] args) throws Exception {
 		City lille = new City("Lille");
@@ -58,37 +58,29 @@ public class Main {
 	
 	public static Letter<?> generateLetter(Inhabitant sender, Inhabitant receiver) throws IllegalArgumentException {
 		Random rand = new Random();
-		SimpleLetter sl;
-		PromissoryNote pn;
-		RegisteredLetter rl;
-		UrgentLetter ul;
+		Letter<?> letter;
 		
 		boolean simple = rand.nextBoolean();
 		boolean registered = rand.nextBoolean();
-		boolean urgent = false; // a modifier par nextBoolean quand urgent OK
+		boolean urgent = rand.nextBoolean();
 		
+		// In each case we will need a Simple letter or a promissory note, which are 
+		// what we call "rank one letters"
 		if (simple) {
-			sl = new SimpleLetter("bla bla", sender, receiver);
-			if (registered) {
-				rl = new RegisteredLetter(sl);
-				if (urgent) {
-					return null; // TODO
-				}
-				return rl;
-			}
-			return sl;
+			letter = new SimpleLetter("blabla", sender, receiver);
 		} else {
 			int amount = rand.nextInt(100)+1;
-			pn = new PromissoryNote(amount, sender, receiver);
-			if (registered) {
-				rl = new RegisteredLetter(pn);
-				if (urgent) {
-					return null;
-				}
-				return rl;
-			}
+			letter =  new PromissoryNote(amount, sender, receiver);
 		}
-		return new SimpleLetter("bla bla", sender, receiver); // TODO
+		
+		//If the letter has to be registered, we create a registered letter
+		if(registered)
+			letter = new RegisteredLetter<Letter<?>>(letter);
+		//If the letter has to be urgent, we create an urgent letter
+		if(urgent)
+			letter = new UrgentLetter<Letter<?>>(letter);
+		
+		return letter;
 	}
 
 }
