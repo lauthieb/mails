@@ -28,10 +28,10 @@ public class RegisteredLetterTest extends LetterTest{
 	}
 
 	@Test
-	public void testRegisteredLetter() {
-		assertEquals(0, receiver.numberOfLetterSent);
+	public void theReceiverSendsAcknowledgmentOfReceipt() {
+		assertEquals(0, receiver.getCity().getPostbox().size());
 		letter.doAction();
-		assertEquals(1, receiver.numberOfLetterSent);
+		assertEquals(1, receiver.getCity().getPostbox().size());
 	}
 
 }
