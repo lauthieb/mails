@@ -3,10 +3,15 @@ package lille1.letter;
 import lille1.content.LetterContent;
 import lille1.global.Inhabitant;
 
-public class RegisteredLetter extends Letter<LetterContent> {
+public class RegisteredLetter extends SpecialLetter {
 
-	public RegisteredLetter(Letter<?> content, Inhabitant sender, Inhabitant receiver) {
+	public RegisteredLetter(Letter<?> content, Inhabitant sender, Inhabitant receiver) throws Exception {
 		super(new LetterContent(content), sender, receiver);
+		if(content instanceof UrgentLetter) {
+			throw new Exception("content can't be an urgent letter");
+		} else if(content instanceof RegisteredLetter) {
+			throw new Exception("content can't be a registered letter");
+		}
 	}
 
 	public int getCost() {
