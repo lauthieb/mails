@@ -15,7 +15,7 @@ public class LetterContent extends Content {
 	
 	@Override
 	public String toString() {
-		return "whose content is " + this.letter;
+		return "" + this.letter;
 	}
 	
 }

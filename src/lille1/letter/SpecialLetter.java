@@ -1,8 +1,6 @@
 package lille1.letter;
 
 import lille1.content.LetterContent;
-import lille1.global.Inhabitant;
-import lille1.letter.Letter;
 
 /**
  * 
@@ -10,11 +8,10 @@ import lille1.letter.Letter;
  * SpecialLetter is a class which follows the Decorator Design Pattern
  *
  */
-public abstract class SpecialLetter extends Letter<LetterContent> {
+public abstract class SpecialLetter<T extends Letter<?>> extends Letter<LetterContent> {
 
-	public SpecialLetter(LetterContent content, Inhabitant sender,
-			Inhabitant receiver) {
-		super(content, sender, receiver);
+	public SpecialLetter(T letter) {
+		super(new LetterContent(letter), letter.getSender(), letter.getReceiver());
 		// TODO Auto-generated constructor stub
 	}
 }

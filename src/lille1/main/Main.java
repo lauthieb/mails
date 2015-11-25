@@ -6,13 +6,15 @@ import lille1.global.City;
 import lille1.global.Inhabitant;
 import lille1.letter.Letter;
 import lille1.letter.PromissoryNote;
+import lille1.letter.RegisteredLetter;
 import lille1.letter.SimpleLetter;
+import lille1.letter.UrgentLetter;
 
 public class Main {
 	protected final static int SIMULATION_TIME = 6;
 	protected final static int NB_INHABITANTS = 10;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		City lille = new City("Lille");
 		lille.createInhabitants(NB_INHABITANTS);
 		
@@ -47,22 +49,47 @@ public class Main {
 			do {
 				idReceiver = rand.nextInt(NB_INHABITANTS);
 			} while(idReceiver == idSender);
-			city.sendLetter(generateLetter(city.getInhabitants().get(idSender), city.getInhabitants().get(idReceiver)));
-		}		
+			try {
+				city.sendLetter(generateLetter(city.getInhabitants().get(idSender), city.getInhabitants().get(idReceiver)));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
-	public static Letter<?> generateLetter(Inhabitant sender, Inhabitant receiver) {
+	public static Letter<?> generateLetter(Inhabitant sender, Inhabitant receiver) throws IllegalArgumentException {
 		Random rand = new Random();
-		int typeLetter = rand.nextInt(2);
+		SimpleLetter sl;
+		PromissoryNote pn;
+		RegisteredLetter rl;
+		UrgentLetter ul;
 		
-		switch(typeLetter) {
-			case 0:
-				return new SimpleLetter("bla bla", sender, receiver);
-			case 1:
-				int amount = rand.nextInt(100)+1;
-				return new PromissoryNote(amount, sender, receiver);
+		boolean simple = rand.nextBoolean();
+		boolean registered = rand.nextBoolean();
+		boolean urgent = false; // a modifier par nextBoolean quand urgent OK
+		
+		if (simple) {
+			sl = new SimpleLetter("bla bla", sender, receiver);
+			if (registered) {
+				rl = new RegisteredLetter(sl, sl.getSender(), sl.getReceiver());
+				if (urgent) {
+					return null; // TODO
+				}
+				return rl;
+			}
+			return sl;
+		} else {
+			int amount = rand.nextInt(100)+1;
+			pn = new PromissoryNote(amount, sender, receiver);
+			if (registered) {
+				rl = new RegisteredLetter(pn, pn.getSender(), pn.getReceiver());
+				if (urgent) {
+					return null;
+				}
+				return rl;
+			}
 		}
-		return null;
+		return new SimpleLetter("bla bla", sender, receiver); // TODO
 	}
 
 }
