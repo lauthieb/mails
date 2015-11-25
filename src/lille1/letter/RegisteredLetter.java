@@ -5,12 +5,12 @@ import lille1.global.Inhabitant;
 
 public class RegisteredLetter extends SpecialLetter {
 
-	public RegisteredLetter(Letter<?> content, Inhabitant sender, Inhabitant receiver) throws Exception {
+	public RegisteredLetter(Letter<?> content, Inhabitant sender, Inhabitant receiver) throws IllegalArgumentException {
 		super(new LetterContent(content), sender, receiver);
 		if(content instanceof UrgentLetter) {
-			throw new Exception("content can't be an urgent letter");
+			throw new IllegalArgumentException("content can't be an urgent letter");
 		} else if(content instanceof RegisteredLetter) {
-			throw new Exception("content can't be a registered letter");
+			throw new IllegalArgumentException("content can't be a registered letter");
 		}
 	}
 

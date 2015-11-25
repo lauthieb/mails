@@ -49,11 +49,15 @@ public class Main {
 			do {
 				idReceiver = rand.nextInt(NB_INHABITANTS);
 			} while(idReceiver == idSender);
-			city.sendLetter(generateLetter(city.getInhabitants().get(idSender), city.getInhabitants().get(idReceiver)));
+			try {
+				city.sendLetter(generateLetter(city.getInhabitants().get(idSender), city.getInhabitants().get(idReceiver)));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
-	public static Letter<?> generateLetter(Inhabitant sender, Inhabitant receiver) {
+	public static Letter<?> generateLetter(Inhabitant sender, Inhabitant receiver) throws IllegalArgumentException {
 		Random rand = new Random();
 		SimpleLetter sl;
 		PromissoryNote pn;
