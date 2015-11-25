@@ -10,18 +10,18 @@ import org.junit.Test;
 public abstract class LetterTest {
 	
 	protected Letter<?> letter;
-	protected City city_lille, city_lens;
+	protected City lille, lens;
 	protected Inhabitant sender;
 	protected Inhabitant receiver;
 	
 	@Before
 	public void createLetter() {
-		city_lille = new City("Lille");
-		city_lille.createInhabitants(10);
-		sender = city_lille.getInhabitants().get(5);
-		city_lens = new City("Lens");
-		city_lens.createInhabitants(5);
-		receiver = city_lens.getInhabitants().get(2);
+		lille = new City("Lille");
+		lille.createInhabitants(10);
+		sender = lille.getInhabitants().get(5);
+		lens = new City("Lens");
+		lens.createInhabitants(5);
+		receiver = lens.getInhabitants().get(2);
 	}
 
 	@Test
