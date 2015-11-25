@@ -25,9 +25,14 @@ public class Main {
 			generateLetters(lille);
 		}
 		
-		/*while(!lille.getPostbox().isEmpty()) {
-			
-		}*/
+		int day = SIMULATION_TIME + 1;
+		
+		while(!lille.getPostbox().isEmpty()) {
+			System.out.println("**************************");
+			System.out.println("Day " + day);
+			lille.distributeLetters();
+			day++;
+		}
 		
 	}
 	
@@ -38,7 +43,10 @@ public class Main {
 
 		for (int n=0; n < letterNumber; n++) {
 			int idSender = rand.nextInt(NB_INHABITANTS);
-			int idReceiver = rand.nextInt(NB_INHABITANTS);
+			int idReceiver;
+			do {
+				idReceiver = rand.nextInt(NB_INHABITANTS);
+			} while(idReceiver == idSender);
 			city.sendLetter(generateLetter(city.getInhabitants().get(idSender), city.getInhabitants().get(idReceiver)));
 		}		
 	}
