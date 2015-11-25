@@ -12,7 +12,6 @@ public class City {
 	
 	public City(String name) {
 		this.name = name;
-		//tr
 		this.inhabitants = new ArrayList<Inhabitant>();
 		this.postbox = new ArrayList<Letter<?>>();
 		System.out.println("Creating " + this.name + " city");
