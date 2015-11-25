@@ -17,18 +17,14 @@ public class SimpleLetterTest extends LetterTest {
 	}
 
 	@Test
-	public void containTextContent() {
-		assertEquals(TextContent.class,letter.content.getClass());
+	public void containsATextContent() {
+		assertEquals(TextContent.class,letter.getContent().getClass());
 	}
 	
+	@Override
 	@Test
 	public void testGetCost() {
 		assertEquals(1, letter.getCost());
-	}
-
-	@Test
-	public void testDoAction() {
-		//TODO
 	}
 
 	@Test
@@ -36,9 +32,10 @@ public class SimpleLetterTest extends LetterTest {
 		assertEquals("a simple letter whose content is a text content (Je suis une simple lettre dans la classe SimpleLetterTest)", letter.toString());
 	}
 
-	@Test
-	public void testGetContent() {
-		//TODO
+	@Override
+	public void testDoAction() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -34,11 +34,9 @@ public abstract class LetterTest {
 
 	@Test
 	public abstract void testDoAction();
-
+	
 	@Test
-	public void testGetContent() {
-		//assertSame();
-	}
+	public abstract void testToString();
 
 	@Test
 	public void testGetSender() {
@@ -49,8 +47,5 @@ public abstract class LetterTest {
 	public void testGetReceiver() {
 		assertSame(receiver,letter.getReceiver());
 	}
-
-	@Test
-	public abstract void testToString();
 
 }
