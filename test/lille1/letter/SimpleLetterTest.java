@@ -11,9 +11,15 @@ import lille1.letter.LetterTest;
 public class SimpleLetterTest extends LetterTest {
 
 	@Before
+	@Override
 	public void createLetter() {
 		super.createLetter();
-		letter = new RegisteredLetter(new SimpleLetter("Je suis une lettre dans un recommandé", sender, receiver), sender, receiver);
+		try {
+			letter = new SimpleLetter("Je suis une simple lettre dans la classe SimpleLetterTest", sender, receiver);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
@@ -33,7 +39,7 @@ public class SimpleLetterTest extends LetterTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("simple letter whose content is a text content (Je suis le contenu d'une simple lettre)", letter.toString());
+		assertEquals("simple letter whose content is a text content (Je suis une simple lettre dans la classe SimpleLetterTest)", letter.toString());
 	}
 
 	@Test

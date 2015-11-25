@@ -34,28 +34,24 @@ public abstract class LetterTest {
 	public abstract void testGetCost();
 
 	@Test
-	public void testDoAction() {
-		fail("Not yet implemented");
-	}
+	public abstract void testDoAction();
 
 	@Test
 	public void testGetContent() {
-		fail("Not yet implemented");
+		//assertSame();
 	}
 
 	@Test
 	public void testGetSender() {
-		fail("Not yet implemented");
+		assertSame(sender,letter.getSender());
 	}
 
 	@Test
 	public void testGetReceiver() {
-		fail("Not yet implemented");
+		assertSame(receiver,letter.getReceiver());
 	}
 
 	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
+	public abstract void testToString();
 
 }

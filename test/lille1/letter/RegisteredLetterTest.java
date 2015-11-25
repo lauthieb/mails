@@ -11,7 +11,12 @@ public class RegisteredLetterTest extends LetterTest{
 	@Override
 	public void createLetter() {
 		super.createLetter();
-		letter = new RegisteredLetter(new SimpleLetter("Je suis une lettre dans un recommandé", sender, receiver), sender, receiver);
+		try {
+			letter = new RegisteredLetter(new SimpleLetter("Je suis une simple lettre dans un recommandé dans la classe RegisteredLetterTest", sender, receiver), sender, receiver);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Test
@@ -21,13 +26,15 @@ public class RegisteredLetterTest extends LetterTest{
 	}
 
 	@Test
+	@Override
 	public void testDoAction() {
 		fail("Not yet implemented");
 	}
 
 	@Test
+	@Override
 	public void testToString() {
-		assertEquals("registered letter whose content is a letter content (Je suis une lettre dans un recommandé, actual)",letter.toString());
+		assertEquals("registered letter whose content is a simple letter who content is (Je suis une simple lettre dans un recommandé dans la classe RegisteredLetterTest)",letter.toString());
 	}
 
 	/*@Test
