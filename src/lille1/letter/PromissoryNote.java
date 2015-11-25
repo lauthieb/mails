@@ -25,7 +25,7 @@ public class PromissoryNote extends Letter<MoneyContent> {
 	
 	@Override
 	public String toString() {
-		return "a promissory note letter whose content is a " + this.content;
+		return "promissory note letter whose content is a " + this.content;
 	}
 
 }

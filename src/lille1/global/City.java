@@ -30,10 +30,18 @@ public class City {
 	}
 	
 	public void distributeLetters() {
-		for(int i = 0; i < this.postbox.size(); i++) {
-			Letter<?> letter = this.postbox.get(i);
+		List<Letter<?>> currentPostbox = new ArrayList<Letter<?>>();
+		for(Letter<?> letter: postbox) {
+			currentPostbox.add(letter);
+		}
+		
+		this.postbox.clear();
+		
+		for(int i = 0; i < currentPostbox.size(); i++) {
+			Letter<?> letter = currentPostbox.get(i);
+			System.out.println("<- " + letter.getReceiver().getName() + " receives a " + letter);
 			letter.doAction();
-			this.postbox.remove(letter);
+			currentPostbox.remove(letter);
 		}
 	}
 	
