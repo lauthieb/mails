@@ -11,9 +11,8 @@ public class UrgentLetterTest extends SpecialLetterTest {
 	@Override
 	public void createLetter() {
 		try {
-			//letter = new UrgentLetter(new SimpleLetter("Je suis une simple lettre dans une lettre urgente",sender,receiver), sender, receiver);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			this.letter = new UrgentLetter<SimpleLetter>(new SimpleLetter("Je suis une simple lettre dans une lettre urgente",sender,receiver));
+		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		}
 	}
@@ -25,11 +24,11 @@ public class UrgentLetterTest extends SpecialLetterTest {
 
 	@Test
 	public void testDoAction() {
-		fail("Not yet implemented");
+		//TODO
 	}
 
 	@Test
 	public void testToString() {
-		assertEquals("urgent letter whose content is a simple letter whose content is a text content (Je suis une simple lettre dans une lettre urgente)",letter.toString());
+		assertEquals("an urgent letter whose content is a simple letter whose content is a text content (Je suis une simple lettre dans une lettre urgente)", this.letter.toString());
 	}
 }

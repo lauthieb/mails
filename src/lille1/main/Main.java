@@ -36,6 +36,8 @@ public class Main {
 			day++;
 		}
 		
+		RegisteredLetter ul = new RegisteredLetter<SimpleLetter>(new SimpleLetter("Je suis une lettre dans un recommandé", new Inhabitant("lol", lille), new Inhabitant("lol", lille)));
+		System.out.println(ul);
 	}
 	
 	public static void generateLetters(City city) {

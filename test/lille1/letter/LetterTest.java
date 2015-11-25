@@ -5,12 +5,11 @@ import lille1.global.City;
 import lille1.global.Inhabitant;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public abstract class LetterTest {
 	
-	protected Letter letter;
+	protected Letter<?> letter;
 	protected City city_lille, city_lens;
 	protected Inhabitant sender;
 	protected Inhabitant receiver;

@@ -22,7 +22,7 @@ public class UrgentLetter<T extends Letter<?>> extends SpecialLetter<T> {
 	
 	@Override
 	public String toString() {
-		return "an urgent letter whose content is a " + this.content;
+		return "an urgent letter whose content is " + this.content;
 	}
 	
 

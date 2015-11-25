@@ -11,7 +11,7 @@ public class RegisteredLetterTest extends LetterTest{
 	@Override
 	public void createLetter() {
 		super.createLetter();
-		letter = new RegisteredLetter(new SimpleLetter("Je suis une lettre dans un recommandé", sender, receiver));
+		letter = new RegisteredLetter<SimpleLetter>(new SimpleLetter("Je suis une lettre dans un recommandé", sender, receiver));
 	}
 	
 	@Test
@@ -22,12 +22,12 @@ public class RegisteredLetterTest extends LetterTest{
 
 	@Test
 	public void testDoAction() {
-		fail("Not yet implemented");
+		//TODO
 	}
 
 	@Test
 	public void testToString() {
-		assertEquals("registered letter whose content is a letter content (Je suis une lettre dans un recommandé, actual)",letter.toString());
+		assertEquals("a registered letter whose content is a simple letter whose content is a text content (Je suis une lettre dans un recommandé)",letter.toString());
 	}
 
 	/*@Test

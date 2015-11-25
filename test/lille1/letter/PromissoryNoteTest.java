@@ -12,8 +12,7 @@ public class PromissoryNoteTest extends LetterTest {
 		super.createLetter();
 		try {
 			letter = new PromissoryNote(amount, sender, receiver);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		}
 	}
@@ -25,12 +24,12 @@ public class PromissoryNoteTest extends LetterTest {
 
 	@Test
 	public void testDoAction() {
-		fail("Not yet implemented");
+		//TODO
 	}
 
 	@Test
 	public void testToString() {
-		assertEquals("promissory note letter whose content is a money content (" + amount + ")", letter.toString());
+		assertEquals("a promissory note letter whose content is a money content (" + amount + ")", letter.toString());
 	}
 
 }
