@@ -13,7 +13,7 @@ public class SimpleLetterTest extends LetterTest {
 	@Before
 	public void createLetter() throws IllegalArgumentException {
 		super.createLetter();
-		letter = new RegisteredLetter(new SimpleLetter("Je suis une lettre dans un recommandé", sender, receiver));
+		letter = new RegisteredLetter(new SimpleLetter("Je suis une simple lettre dans la classe SimpleLetterTest", sender, receiver));
 	}
 
 	@Test
@@ -33,7 +33,7 @@ public class SimpleLetterTest extends LetterTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("simple letter whose content is a text content (Je suis le contenu d'une simple lettre)", letter.toString());
+		assertEquals("simple letter whose content is a text content (Je suis une simple lettre dans la classe SimpleLetterTest)", letter.toString());
 	}
 
 	@Test

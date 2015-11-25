@@ -2,16 +2,16 @@ package lille1.letter;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
-public class PromissoryNoteTest extends LetterTest {
+public class UrgentLetterTest extends SpecialLetterTest {
 
-	int amount = 123;
-	
+	@Before
+	@Override
 	public void createLetter() {
-		super.createLetter();
 		try {
-			letter = new PromissoryNote(amount, sender, receiver);
+			letter = new UrgentLetter(new SimpleLetter("Je suis une simple lettre dans une lettre urgente",sender,receiver), sender, receiver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -30,7 +30,6 @@ public class PromissoryNoteTest extends LetterTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("promissory note letter whose content is a money content (" + amount + ")", letter.toString());
+		assertEquals("urgent letter whose content is a simple letter whose content is a text content (Je suis une simple lettre dans une lettre urgente)",letter.toString());
 	}
-
 }
