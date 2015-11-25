@@ -11,7 +11,7 @@ public class UrgentLetterTest extends SpecialLetterTest {
 	@Override
 	public void createLetter() {
 		try {
-			letter = new UrgentLetter(new SimpleLetter("Je suis une simple lettre dans une lettre urgente",sender,receiver), sender, receiver);
+			//letter = new UrgentLetter(new SimpleLetter("Je suis une simple lettre dans une lettre urgente",sender,receiver), sender, receiver);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

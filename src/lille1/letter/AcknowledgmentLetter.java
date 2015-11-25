@@ -9,7 +9,7 @@ public class AcknowledgmentLetter extends SimpleLetter {
 	}
 	
 	public String toString() {
-		return "aknowledgment of receipt which is a " + super.toString();
+		return "an aknowledgment of receipt which is " + super.toString();
 	}
 	
 }

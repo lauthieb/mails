@@ -1,8 +1,5 @@
 package lille1.letter;
 
-import lille1.content.LetterContent;
-import lille1.global.Inhabitant;
-
 public class UrgentLetter<T extends Letter<?>> extends SpecialLetter<T> {
 	
 	public UrgentLetter(T letter) throws IllegalArgumentException {
@@ -25,7 +22,7 @@ public class UrgentLetter<T extends Letter<?>> extends SpecialLetter<T> {
 	
 	@Override
 	public String toString() {
-		return "urgent letter whose content is a " + this.content;
+		return "an urgent letter whose content is a " + this.content;
 	}
 	
 

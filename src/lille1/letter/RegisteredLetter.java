@@ -22,14 +22,14 @@ public class RegisteredLetter<T extends Letter<?>> extends SpecialLetter<T> {
 		//We do the action which come from the LetterContent
 		this.content.getLetter().doAction();
 		//We create an acknowledgment
-		SimpleLetter acknowledgment = new SimpleLetter("acknowledgment of receipt which is a " + this.getContent(), this.receiver, this.sender);
+		AcknowledgmentLetter acknowledgment = new AcknowledgmentLetter("acknowledgment of receipt which is a " + this.getContent(), this.receiver, this.sender);
 		//We send the acknowledgment of receipt to the sender
 		this.receiver.getCity().sendLetter(acknowledgment);
 	}
 	
 	@Override
 	public String toString() {
-		return "registered letter whose content is a " + this.content;
+		return "a registered letter whose content is " + this.content;
 	}
 
 }

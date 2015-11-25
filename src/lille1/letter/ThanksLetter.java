@@ -9,7 +9,7 @@ public class ThanksLetter extends SimpleLetter {
 	}
 	
 	public String toString() {
-		return "thanks letter which is a " + super.toString();
+		return "a thanks letter which is " + super.toString();
 	}
 
 }
