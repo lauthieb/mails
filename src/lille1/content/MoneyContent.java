@@ -1,7 +1,5 @@
 package lille1.content;
 
-import lille1.global.Content;
-
 public class MoneyContent extends Content {
 	protected double amount;
 
@@ -15,7 +13,7 @@ public class MoneyContent extends Content {
 	
 	@Override
 	public String toString() {
-		return "money content (" + this.amount + ")";
+		return "whose content is a money content (" + this.amount + ")";
 	}
 
 }

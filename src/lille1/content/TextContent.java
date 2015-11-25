@@ -1,7 +1,5 @@
 package lille1.content;
 
-import lille1.global.Content;
-
 public class TextContent extends Content{
 	protected String text;
 
@@ -11,7 +9,7 @@ public class TextContent extends Content{
 
 	@Override
 	public String toString() {
-		return "text content (" + this.text + ")";
+		return "whose content is a text content (" + this.text + ")";
 		
 	}
 	

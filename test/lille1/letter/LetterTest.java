@@ -1,14 +1,17 @@
 package lille1.letter;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
+import org.junit.Before;
 
 public class LetterTest {
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
+	
+	SimpleLetter sl;
+	PromissoryNote pn;
+	RegisteredLetter rl;
+	UrgentLetter ul;
+	
+	@Before
+	public void init() {
+		
 	}
 
 }

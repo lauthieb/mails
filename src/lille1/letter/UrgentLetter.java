@@ -1,12 +1,17 @@
 package lille1.letter;
 
 import lille1.content.LetterContent;
+import lille1.global.Inhabitant;
 
 public class UrgentLetter extends Letter<LetterContent> {
 
+	public UrgentLetter(Letter<?> content, Inhabitant sender, Inhabitant receiver) {
+		super(new LetterContent(content), sender, receiver);
+	}
+
 	@Override
 	public double getCost() {
-		return getCost()*2;
+		return COST_LETTER*2;
 	}
 
 	@Override

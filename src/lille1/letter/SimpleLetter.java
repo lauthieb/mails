@@ -1,11 +1,12 @@
 package lille1.letter;
 
 import lille1.content.TextContent;
+import lille1.global.Inhabitant;
 
 public class SimpleLetter extends Letter<TextContent> {
 	
-	public SimpleLetter(String content) {
-		this.content = new TextContent(content);
+	public SimpleLetter(String content, Inhabitant sender, Inhabitant receiver){
+		super(new TextContent(content), sender, receiver);
 	}
 	
 	public TextContent getContent() {

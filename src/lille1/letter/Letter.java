@@ -1,6 +1,6 @@
 package lille1.letter;
 
-import lille1.global.Content;
+import lille1.content.Content;
 import lille1.global.Inhabitant;
 
 public abstract class Letter<C extends Content> {
@@ -9,9 +9,15 @@ public abstract class Letter<C extends Content> {
 	protected Inhabitant receiver;
 	protected final int COST_LETTER = 1;
 	
+	public Letter(C content, Inhabitant sender, Inhabitant receiver){
+		this.content = content;
+		this.sender = sender;
+		this.receiver = receiver;
+	}
+	
 	public abstract double getCost();
 	public abstract void doAction();
-	//TODO: Se servir du pattern d'avant
+
 	public C getContent() {
 		return content;
 	}

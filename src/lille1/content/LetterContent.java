@@ -1,6 +1,5 @@
 package lille1.content;
 
-import lille1.global.Content;
 import lille1.letter.Letter;
 
 public class LetterContent extends Content {
@@ -16,7 +15,7 @@ public class LetterContent extends Content {
 	
 	@Override
 	public String toString() {
-		return "letter content (" + this.letter.getContent() + ")";
+		return "whose content is " + this.letter;
 	}
 	
 }

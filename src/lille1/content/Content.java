@@ -1,4 +1,4 @@
-package lille1.global;
+package lille1.content;
 
 public class Content {
 }
