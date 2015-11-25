@@ -2,6 +2,8 @@ package lille1.letter;
 
 import static org.junit.Assert.*;
 
+import org.junit.Test;
+
 public class RegisteredLetterTest extends LetterTest{
 
 	@Override
@@ -25,11 +27,11 @@ public class RegisteredLetterTest extends LetterTest{
 		assertEquals("a registered letter whose content is a simple letter whose content is a text content (Je suis une lettre dans un recommandé)",letter.toString());
 	}
 
-	/*@Test
+	@Test
 	public void testRegisteredLetter() {
 		assertEquals(0, receiver.numberOfLetterSent);
 		letter.doAction();
 		assertEquals(1, receiver.numberOfLetterSent);
-	}*/
+	}
 
 }

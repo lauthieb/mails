@@ -19,6 +19,7 @@ public class City {
 
 	public void sendLetter(Letter<?> letter) {
 		letter.getSender().getBankAccount().debit(letter.getCost());
+		letter.getSender().numberOfLetterSent++;
 		this.postbox.add(letter);
 		if(letter.getCost() > 1) {
 			System.out.println("-> " + letter.getSender().getName() + " mails " + letter + " to " + letter.getReceiver().getName() +" for a cost of " + letter.getCost() + " euros");
