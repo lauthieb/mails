@@ -29,6 +29,9 @@ public abstract class LetterTest {
 	public void testCostPositive() {
 		assertTrue(letter.getCost() > 0);
 	}
+	
+	@Test
+	public abstract void testGetCost();
 
 	@Test
 	public void testDoAction() {

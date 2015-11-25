@@ -2,22 +2,24 @@ package lille1.letter;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
+import lille1.content.TextContent;
 import lille1.letter.LetterTest;
 
 public class SimpleLetterTest extends LetterTest {
 
-	/*@Before
+	@Before
 	public void createLetter() {
-		letter = new SimpleLetter("Je suis le contenu d'une simple lettre");
-		sender = new Inhabitant("Thibault", new City("Angres", sender));
+		super.createLetter();
+		letter = new RegisteredLetter(new SimpleLetter("Je suis une lettre dans un recommandé", sender, receiver), sender, receiver);
 	}
 
 	@Test
 	public void containTextContent() {
 		assertEquals(TextContent.class,letter.content.getClass());
-	}*/
+	}
 	
 	@Test
 	public void testGetCost() {

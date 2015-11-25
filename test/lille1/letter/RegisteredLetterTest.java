@@ -15,8 +15,9 @@ public class RegisteredLetterTest extends LetterTest{
 	}
 	
 	@Test
+	@Override
 	public void testGetCost() {
-		assertEquals(16,letter.getCost());
+		assertEquals(16,letter.getCost());	// Content is : SimpleLetter
 	}
 
 	@Test
