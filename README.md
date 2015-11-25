@@ -12,7 +12,7 @@ Il existe plusieurs types de courriers ayant chacun un certain coût et des acti
 
 * Différents objets globaux : Inhabitant, City, BankAccount
 * Différents types de lettre : SimpleLetter, ThanksLetter, AcknowledgmentLetter, PromissoryNote, RegisteredLetter
-* Différents types de contenu de lettre: TextContent, MoneyContent, LetterContent
+* Différents types de contenu de lettre : TextContent, MoneyContent, LetterContent
 
 ## Contributeurs
 
