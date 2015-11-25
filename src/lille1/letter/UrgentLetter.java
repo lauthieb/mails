@@ -3,15 +3,18 @@ package lille1.letter;
 import lille1.content.LetterContent;
 import lille1.global.Inhabitant;
 
-public class UrgentLetter extends Letter<LetterContent> {
+public class UrgentLetter extends SpecialLetter {
 
-	public UrgentLetter(Letter<?> content, Inhabitant sender, Inhabitant receiver) {
+	public UrgentLetter(Letter<?> content, Inhabitant sender, Inhabitant receiver) throws Exception {
 		super(new LetterContent(content), sender, receiver);
+		if(content instanceof UrgentLetter) {
+			throw new Exception("content can't be an urgent letter");
+		}
 	}
 
 	@Override
 	public int getCost() {
-		return COST_LETTER*2;
+		return content.getLetter().getCost()*2;
 	}
 
 	@Override
