@@ -10,23 +10,30 @@ public class City {
 	protected List<Inhabitant> inhabitants;
 	protected List<Letter<?>> postbox;
 	
-	public City(String name, List<Inhabitant> inhabitants) {
-		//TODO : cr�er une liste de Letter ici au lieu de le passer en param�tre
+	public City(String name) {
 		this.name = name;
-		this.inhabitants = inhabitants;
-		this.postbox = new ArrayList<Letter<?>>(); {
-		};
+		this.inhabitants = new ArrayList<Inhabitant>();
+		this.postbox = new ArrayList<Letter<?>>();
+		System.out.println("Creating " + this.name + " city");
 	}
 
 	public void sendLetter(Letter<?> letter) {
 		letter.getSender().getBankAccount().debit(letter.getCost());
 		this.postbox.add(letter);
+		System.out.println("-> "+letter.getSender().getName()+" mails "+letter+" to "+letter.getReceiver().getName()+" a cost of "+letter.getCost()+" euro");
 	}
 	
 	public void distributeLetters() {
 		for(Letter<?> letter: postbox) {
 			letter.doAction();
 			this.postbox.remove(letter);
+		}
+	}
+	
+	public void createInhabitants(int nb) {
+		System.out.println("Creating " + nb + " inhabitants");
+		for(int i=0; i < nb; i++) {
+			this.inhabitants.add(new Inhabitant("inhabitant-"+i, this));
 		}
 	}
 	
