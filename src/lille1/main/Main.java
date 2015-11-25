@@ -10,9 +10,17 @@ import lille1.letter.RegisteredLetter;
 import lille1.letter.SimpleLetter;
 import lille1.letter.UrgentLetter;
 
+/**
+ * 
+ * @author Coillaux Thibault
+ * @author Thiebault Laurent
+ * @author Saab Mathieu
+ * Main is the main class of the project, this is the simulation of a mailing system
+ *
+ */
 public class Main {
 	protected final static int SIMULATION_TIME = 6;
-	protected final static int NB_INHABITANTS = 100;
+	protected final static int NB_INHABITANTS = 10;
 
 	public static void main(String[] args) throws Exception {
 		City lille = new City("Lille");
@@ -37,6 +45,10 @@ public class Main {
 		}
 	}
 	
+	/**
+	 * Static function which generate a list of letters for a day
+	 * @param city the city in which the letters will be sent
+	 */
 	public static void generateLetters(City city) {
 		Random rand = new Random();
 
@@ -55,8 +67,13 @@ public class Main {
 			}
 		}
 	}
-	
-	public static Letter<?> generateLetter(Inhabitant sender, Inhabitant receiver) throws IllegalArgumentException {
+	/**
+	 * Static function which randomly generate letters to be posted in a city
+	 * @param sender the Inhabitant which sent the letter
+	 * @param receiver the Inhabitant which will receive the letter
+	 * @return a letter
+	 */
+	public static Letter<?> generateLetter(Inhabitant sender, Inhabitant receiver) {
 		Random rand = new Random();
 		Letter<?> letter;
 		
@@ -64,8 +81,7 @@ public class Main {
 		boolean registered = rand.nextBoolean();
 		boolean urgent = rand.nextBoolean();
 		
-		// In each case we will need a Simple letter or a promissory note, which are 
-		// what we call "rank one letters"
+		// In each case we will need a Simple letter or a promissory note
 		if (simple) {
 			letter = new SimpleLetter("blabla", sender, receiver);
 		} else {
