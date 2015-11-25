@@ -39,7 +39,7 @@ public class City {
 		
 		for(int i = 0; i < currentPostbox.size(); i++) {
 			Letter<?> letter = currentPostbox.get(i);
-			System.out.println("<- " + letter.getReceiver().getName() + " receives a " + letter);
+			System.out.println("<- " + letter.getReceiver().getName() + " receives a " + letter + " from " + letter.getSender().getName());
 			letter.doAction();
 			currentPostbox.remove(letter);
 		}
