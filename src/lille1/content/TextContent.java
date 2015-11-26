@@ -1,11 +1,11 @@
 package lille1.content;
 /**
  * 
+ * TextContent is a class which represents a text composed letter
+ * 
  * @author Coillaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
- * TextContent is a class which represents a text composed letter
- *
  */
 public class TextContent extends Content{
 	protected String text;

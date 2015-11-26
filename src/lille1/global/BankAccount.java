@@ -1,11 +1,11 @@
 package lille1.global;
 /**
  * 
+ * BankAccount is a class which represents the bank account of a inhabitant
+ * 
  * @author Coillaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
- * BankAccount is a class which represents the bank account of a inhabitant
- *
  */
 public class BankAccount {
 	protected int amount;

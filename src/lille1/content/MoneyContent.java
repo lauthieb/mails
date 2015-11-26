@@ -1,11 +1,11 @@
 package lille1.content;
 /**
  * 
+ * MoneyContent is a content which is composed by an amount of money
+ * 
  * @author Coillaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
- * MoneyAccount is a content which is composed by an amount of money
- *
  */
 public class MoneyContent extends Content {
 	protected int amount;

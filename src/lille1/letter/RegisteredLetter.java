@@ -4,11 +4,11 @@ import lille1.content.LetterContent;
 
 /**
  * 
+ * RegisteredLetter is the class which represents a registered letter
+ * 
  * @author Coillaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
- * RegisteredLetter is the class which represents a registered letter
- *
  */
 public class RegisteredLetter<T extends Letter<?>> extends Letter<LetterContent> {
 

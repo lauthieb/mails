@@ -4,11 +4,11 @@ import lille1.content.Content;
 import lille1.global.Inhabitant;
 /**
  * 
+ * Letter is the class which represents any kind of letter. All other letters class will be an extension of this class
+ * 
  * @author Coillaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
- * Letter is the class which represents any kind of letter. All other letters class will be an extension of this class
- *
  */
 public abstract class Letter<C extends Content> {
 	protected C content;

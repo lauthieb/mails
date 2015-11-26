@@ -1,11 +1,11 @@
 package lille1.global;
 /**
  * 
+ * Inhabitant is a class which represents one inhabitant of a city with his bank account
+ * 
  * @author Coillaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
- * Inhabitant is a class which represents one inhabitant of a city with his bank account
- *
  */
 public class Inhabitant {
 	protected String name;

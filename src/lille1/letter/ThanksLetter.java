@@ -3,11 +3,11 @@ package lille1.letter;
 import lille1.global.Inhabitant;
 /**
  * 
+ * ThanksLetter is a class which represents a thanks letter an inhabitant will send when he receives a promissory note
+ *
  * @author Coillaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
- * ThanksLetter is a class which represents a thanks letter an inhabitant will send when he receives a promissory note
- *
  */
 public class ThanksLetter extends SimpleLetter {
 

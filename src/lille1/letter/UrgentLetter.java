@@ -4,11 +4,11 @@ import lille1.content.LetterContent;
 
 /**
  * 
+ * A class which represents the urgent letters
+ *
  * @author Coillaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
- * A class which represents the urgent letters
- *
  */
 public class UrgentLetter<T extends Letter<?>> extends Letter<LetterContent> {
 	/**

@@ -6,11 +6,11 @@ import java.util.List;
 import lille1.letter.Letter;
 /**
  * 
+ * City is a class which represents a city where inhabitants will echange letters
+ *
  * @author Coillaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
- * City is a class which represents a city where inhabitants will echange letters
- *
  */
 public class City {
 	protected String name;

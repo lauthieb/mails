@@ -4,11 +4,11 @@ import lille1.content.TextContent;
 import lille1.global.Inhabitant;
 /**
  * 
+ * SimpleLetter is a class which represents a simple letter with some text inside
+ *
  * @author Coillaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
- * SimpleLetter is a class which represents a simple letter with some text inside
- *
  */
 public class SimpleLetter extends Letter<TextContent> {
 	
