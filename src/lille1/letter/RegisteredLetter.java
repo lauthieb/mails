@@ -18,7 +18,6 @@ public class RegisteredLetter extends NotUrgentLetter<LetterContent> {
 	 * @param letter the letter which will be contained inside the registered letter
 	 * @param sender the sender
 	 * @param receiver the receiver
-	 * @throws IllegalArgumentException if the letter inside is an urgent or registered letter because it's not coherent
 	 */
 	public RegisteredLetter(NotRegisteredLetter<?> letter, Inhabitant sender, Inhabitant receiver) {
 		super(new LetterContent(letter), sender, receiver);

@@ -6,6 +6,7 @@ public class ThanksLetterTest extends SimpleLetterTest {
 
 	@Override
 	public void createLetter() {
+		super.createLetter();
 		letter = new ThanksLetter("Je suis le contenu d'une lettre de remerciement créée dans la classe ThanksLetterTest", sender, receiver);
 	}
 	

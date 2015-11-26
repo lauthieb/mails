@@ -9,7 +9,7 @@ import lille1.content.TextContent;
 public class SimpleLetterTest extends LetterTest {
 
 	@Override
-	public void createLetter() throws IllegalArgumentException {
+	public void createLetter() {
 		super.createLetter();
 		letter = new SimpleLetter("Je suis une simple lettre dans la classe SimpleLetterTest", sender, receiver);
 	}

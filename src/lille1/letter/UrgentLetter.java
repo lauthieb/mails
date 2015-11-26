@@ -18,11 +18,9 @@ public class UrgentLetter extends Letter<LetterContent> {
 	 * @param letter a letter which has to be urgent
 	 * @param sender the sender
 	 * @param receiver the receiver
-	 * @throws IllegalArgumentException when an urgent letter contains an urgent letter. It's not coherent
 	 */
 	public UrgentLetter(NotUrgentLetter<?> letter, Inhabitant sender, Inhabitant receiver) {
-		super(null, sender, receiver);
-		this.content =  new LetterContent(letter);
+		super(new LetterContent(letter), sender, receiver);
 	}
 
 	/**
