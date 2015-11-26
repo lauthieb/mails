@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import lille1.letterold.PromissoryNote;
-import lille1.letterold.SimpleLetter;
+import lille1.letter.PromissoryNote;
+import lille1.letter.SimpleLetter;
 
 public class CityTest {
 	protected City city;

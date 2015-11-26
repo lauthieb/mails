@@ -2,7 +2,7 @@ package lille1.content;
 
 import static org.junit.Assert.*;
 
-import lille1.letterold.SimpleLetter;
+import lille1.letter.SimpleLetter;
 
 public class LetterContentTest extends ContentTest {
 	

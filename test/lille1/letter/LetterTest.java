@@ -1,12 +1,13 @@
 package lille1.letter;
 
-import static org.junit.Assert.*;
-import lille1.global.City;
-import lille1.global.Inhabitant;
-import lille1.letterold.Letter;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import lille1.global.City;
+import lille1.global.Inhabitant;
 
 public abstract class LetterTest {
 	

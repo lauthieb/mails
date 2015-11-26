@@ -1,8 +1,6 @@
 package lille1.letter;
 
-import static org.junit.Assert.*;
-
-import lille1.letterold.ThanksLetter;
+import static org.junit.Assert.assertEquals;
 
 public class ThanksLetterTest extends SimpleLetterTest {
 

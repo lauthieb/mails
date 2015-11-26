@@ -1,9 +1,6 @@
 package lille1.letter;
 
-import static org.junit.Assert.*;
-
-import lille1.letterold.SimpleLetter;
-import lille1.letterold.UrgentLetter;
+import static org.junit.Assert.assertEquals;
 
 public class UrgentLetterTest extends LetterTest {
 
@@ -11,7 +8,7 @@ public class UrgentLetterTest extends LetterTest {
 	public void createLetter() {
 		super.createLetter();
 		try {	
-			this.letter = new UrgentLetter<SimpleLetter>(new SimpleLetter("Je suis une simple lettre dans une lettre urgente",sender, receiver));
+			this.letter = new UrgentLetter(new SimpleLetter("Je suis une simple lettre dans une lettre urgente",sender, receiver), sender, receiver);
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		}

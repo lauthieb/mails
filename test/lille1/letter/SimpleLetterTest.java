@@ -1,12 +1,10 @@
 package lille1.letter;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import lille1.content.TextContent;
-import lille1.letter.LetterTest;
-import lille1.letterold.SimpleLetter;
 
 public class SimpleLetterTest extends LetterTest {
 

@@ -1,18 +1,15 @@
 package lille1.letter;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import lille1.letterold.RegisteredLetter;
-import lille1.letterold.SimpleLetter;
 
 public class RegisteredLetterTest extends LetterTest{
 
 	@Override
 	public void createLetter() {
 		super.createLetter();
-		letter = new RegisteredLetter<SimpleLetter>(new SimpleLetter("Je suis une lettre dans un recommandé", sender, receiver));
+		letter = new RegisteredLetter(new SimpleLetter("Je suis une lettre dans un recommande", sender, receiver), sender, receiver);
 	}
 	
 	@Override
@@ -27,7 +24,7 @@ public class RegisteredLetterTest extends LetterTest{
 
 	@Override
 	public void testToString() {
-		assertEquals("a registered letter whose content is a simple letter whose content is a text content (Je suis une lettre dans un recommandé)",letter.toString());
+		assertEquals("a registered letter whose content is a simple letter whose content is a text content (Je suis une lettre dans un recommande)",letter.toString());
 	}
 
 	@Test

@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import lille1.letterold.AcknowledgmentLetter;
+import lille1.letter.AcknowledgmentLetter;
 
 public class AcknowledgmentLetterTest extends SimpleLetterTest {
 
