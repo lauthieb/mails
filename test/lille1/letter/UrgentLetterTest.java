@@ -1,14 +1,13 @@
 package lille1.letter;
 
 import static org.junit.Assert.*;
-import lille1.global.City;
-import lille1.global.Inhabitant;
 
-public class UrgentLetterTest extends SpecialLetterTest {
+public class UrgentLetterTest extends LetterTest {
 
 	@Override
 	public void createLetter() {
-		try {
+		super.createLetter();
+		try {	
 			this.letter = new UrgentLetter<SimpleLetter>(new SimpleLetter("Je suis une simple lettre dans une lettre urgente",sender, receiver));
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
@@ -22,8 +21,10 @@ public class UrgentLetterTest extends SpecialLetterTest {
 
 	@Override
 	public void testDoAction() {
-		//TODO
+		assertEquals(5000, sender.getBankAccount().getAmount());
 		letter.doAction();
+		// There's no specific action in a simple letter
+		assertEquals(5000, sender.getBankAccount().getAmount());
 	}
 
 	@Override
