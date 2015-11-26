@@ -16,6 +16,8 @@ public class UrgentLetter extends Letter<LetterContent> {
 	/**
 	 * Constructor of the class UrgentLetter
 	 * @param letter a letter which has to be urgent
+	 * @param sender the sender
+	 * @param receiver the receiver
 	 * @throws IllegalArgumentException when an urgent letter contains an urgent letter. It's not coherent
 	 */
 	public UrgentLetter(NotUrgentLetter<?> letter, Inhabitant sender, Inhabitant receiver) {

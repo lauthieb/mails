@@ -17,9 +17,9 @@ public abstract class NotRegisteredLetter<T extends Content> extends NotUrgentLe
 	 * /**
 	 * Constructor of the class NotRegisteredLetter
 	 * 
-	 * @param letter
-	 * @param sender
-	 * @param receiver
+	 * @param letter the letter
+	 * @param sender the sender
+	 * @param receiver the receiver
 	 */
 	public NotRegisteredLetter(T letter, Inhabitant sender, Inhabitant receiver) {
 		super(letter, sender, receiver);
