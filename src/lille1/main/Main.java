@@ -5,6 +5,7 @@ import java.util.Random;
 import lille1.global.City;
 import lille1.global.Inhabitant;
 import lille1.letter.Letter;
+import lille1.letter.NotRegisteredLetter;
 import lille1.letter.PromissoryNote;
 import lille1.letter.RegisteredLetter;
 import lille1.letter.SimpleLetter;
@@ -23,8 +24,8 @@ public class Main {
 	protected final static int NB_INHABITANTS = 10;
 
 	public static void main(String[] args) throws Exception {
-		City lille = new City("Lille");
-		lille.createInhabitants(NB_INHABITANTS);
+		City lille = new City("Lille");		
+		lille.createInhabitants(NB_INHABITANTS);		
 		
 		System.out.println("Mailing letters for " + SIMULATION_TIME + " days");
 		
@@ -43,6 +44,17 @@ public class Main {
 			lille.distributeLetters();
 			day++;
 		}
+		
+		/* Tests showing the compilation doesn't work when we have
+		 * 		an UrgentLetter whose content is an UrgentLetter
+		 * 		an RegisteredLetter whose content is an UrgentLetter
+		 * 		an RegisteredLetter whose content is an RegisteredLetter
+		UrgentLetter test = new UrgentLetter(new UrgentLetter(null, null, null), lille.getInhabitants().get(0), lille.getInhabitants().get(1));
+		UrgentLetter test2 = new UrgentLetter(new RegisteredLetter(null, null, null), lille.getInhabitants().get(0), lille.getInhabitants().get(1));
+		RegisteredLetter test3 = new RegisteredLetter(new RegisteredLetter(null, null, null), lille.getInhabitants().get(0), lille.getInhabitants().get(1));
+		RegisteredLetter test4 = new RegisteredLetter(new UrgentLetter(null, null, null), lille.getInhabitants().get(0), lille.getInhabitants().get(1));
+		*/
+		
 	}
 	
 	/**
@@ -67,35 +79,47 @@ public class Main {
 			}
 		}
 	}
+	
 	/**
 	 * Static function which randomly generate letters to be posted in a city
 	 * @param sender the Inhabitant which sent the letter
 	 * @param receiver the Inhabitant which will receive the letter
 	 * @return a letter
 	 */
-	public static Letter<?> generateLetter(Inhabitant sender, Inhabitant receiver) {
+	public static Letter<?> generateLetter(Inhabitant sender, Inhabitant receiver) throws IllegalArgumentException {
 		Random rand = new Random();
-		Letter<?> letter;
+		
+		UrgentLetter urgentLetter = null;
+		RegisteredLetter registeredLetter = null;
+		NotRegisteredLetter<?> letter;
 		
 		boolean simple = rand.nextBoolean();
 		boolean registered = rand.nextBoolean();
 		boolean urgent = rand.nextBoolean();
 		
-		// In each case we will need a Simple letter or a promissory note
+		// In each case we will need a Simple letter or a promissory note, which are 
+		// what we call "rank one letters"
 		if (simple) {
 			letter = new SimpleLetter("blabla", sender, receiver);
 		} else {
 			int amount = rand.nextInt(100)+1;
-			letter =  new PromissoryNote(amount, sender, receiver);
+			letter=  new PromissoryNote(amount, sender, receiver);
 		}
 		
 		//If the letter has to be registered, we create a registered letter
-		if(registered)
-			letter = new RegisteredLetter<Letter<?>>(letter);
+		if(registered)  {
+			registeredLetter = new RegisteredLetter(letter, sender, receiver);
+			if(!urgent)
+				return registeredLetter;
+		}
 		//If the letter has to be urgent, we create an urgent letter
-		if(urgent)
-			letter = new UrgentLetter<Letter<?>>(letter);
-		
+		if(urgent) {
+			if(registered)
+				urgentLetter = new UrgentLetter(registeredLetter, sender, receiver);
+			else
+				urgentLetter = new UrgentLetter(letter, sender, receiver);
+			return urgentLetter;
+		}
 		return letter;
 	}
 

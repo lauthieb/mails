@@ -2,6 +2,9 @@ package lille1.letter;
 
 import static org.junit.Assert.*;
 
+import lille1.letterold.SimpleLetter;
+import lille1.letterold.UrgentLetter;
+
 public class UrgentLetterTest extends LetterTest {
 
 	@Override

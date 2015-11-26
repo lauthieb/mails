@@ -1,31 +1,27 @@
 package lille1.letter;
 
 import lille1.content.LetterContent;
+import lille1.global.Inhabitant;
 
 /**
  * 
  * RegisteredLetter is the class which represents a registered letter
  * 
- * @author Coillaux Thibault
+ * @author Coilliaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */
-public class RegisteredLetter<T extends Letter<?>> extends Letter<LetterContent> {
+public class RegisteredLetter extends NotUrgentLetter<LetterContent> {
 
 	/**
 	 * Constructor for a registered letter
 	 * @param letter the letter which will be contained inside the registered letter
 	 * @throws IllegalArgumentException if the letter inside is an urgent or registered letter because it's not coherent
 	 */
-	public RegisteredLetter(T letter) throws IllegalArgumentException {
-		super(new LetterContent(letter), letter.getSender(), letter.getReceiver());
-		if(content.getLetter() instanceof UrgentLetter) {
-			throw new IllegalArgumentException("content can't be an urgent letter");
-		} else if(content.getLetter() instanceof RegisteredLetter) {
-			throw new IllegalArgumentException("content can't be a registered letter");
-		}
+	public RegisteredLetter(NotRegisteredLetter<?> letter, Inhabitant sender, Inhabitant receiver) {
+		super(new LetterContent(letter), sender, receiver);
 	}
-	
+
 	/**
 	 * method which returns the cost of a registered letter
 	 * @return the cost of a registered letter
@@ -33,7 +29,7 @@ public class RegisteredLetter<T extends Letter<?>> extends Letter<LetterContent>
 	public int getCost() {
 		return (this.content.getLetter().getCost()+15);
 	}
-	
+
 	/**
 	 * implementation of the doAction method. Here we want the receiver to send an acknowledgment letter to the sender of the initial registered letter
 	 */

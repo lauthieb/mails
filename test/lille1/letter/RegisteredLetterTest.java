@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import lille1.letterold.RegisteredLetter;
+import lille1.letterold.SimpleLetter;
+
 public class RegisteredLetterTest extends LetterTest{
 
 	@Override

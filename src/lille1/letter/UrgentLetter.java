@@ -1,26 +1,27 @@
 package lille1.letter;
 
+import lille1.content.Content;
 import lille1.content.LetterContent;
+import lille1.global.Inhabitant;
 
 /**
  * 
  * A class which represents the urgent letters
  *
- * @author Coillaux Thibault
+ * @author Coilliaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */
-public class UrgentLetter<T extends Letter<?>> extends Letter<LetterContent> {
+public class UrgentLetter extends Letter<LetterContent> {
+	
 	/**
-	 * Constructor of the class letter
+	 * Constructor of the class UrgentLetter
 	 * @param letter a letter which has to be urgent
 	 * @throws IllegalArgumentException when an urgent letter contains an urgent letter. It's not coherent
 	 */
-	public UrgentLetter(T letter) throws IllegalArgumentException {
-		super(new LetterContent(letter), letter.getSender(), letter.getReceiver());
-		if(letter instanceof UrgentLetter) {
-			throw new IllegalArgumentException("content can't be an urgent letter");
-		}
+	public UrgentLetter(NotUrgentLetter<?> letter, Inhabitant sender, Inhabitant receiver) {
+		super(null, sender, receiver);
+		this.content =  new LetterContent(letter);
 	}
 
 	/**

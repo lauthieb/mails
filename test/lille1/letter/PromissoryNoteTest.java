@@ -2,6 +2,8 @@ package lille1.letter;
 
 import static org.junit.Assert.*;
 
+import lille1.letterold.PromissoryNote;
+
 public class PromissoryNoteTest extends LetterTest {
 
 	int amount = 123;

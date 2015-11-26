@@ -2,6 +2,8 @@ package lille1.letter;
 
 import static org.junit.Assert.*;
 
+import lille1.letterold.ThanksLetter;
+
 public class ThanksLetterTest extends SimpleLetterTest {
 
 	@Override

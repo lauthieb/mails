@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import lille1.content.TextContent;
 import lille1.letter.LetterTest;
+import lille1.letterold.SimpleLetter;
 
 public class SimpleLetterTest extends LetterTest {
 

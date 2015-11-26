@@ -2,15 +2,16 @@ package lille1.letter;
 
 import lille1.content.TextContent;
 import lille1.global.Inhabitant;
+
 /**
  * 
  * SimpleLetter is a class which represents a simple letter with some text inside
  *
- * @author Coillaux Thibault
+ * @author Coilliaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */
-public class SimpleLetter extends Letter<TextContent> {
+public class SimpleLetter extends NotRegisteredLetter<TextContent> {
 	
 	/**
 	 * Constructor for the simple letter

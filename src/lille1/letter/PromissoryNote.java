@@ -2,15 +2,16 @@ package lille1.letter;
 
 import lille1.content.MoneyContent;
 import lille1.global.Inhabitant;
+
 /**
- *
- * PromissoryNote is the class which represents a money containing letter
- *
- * @author Coillaux Thibault
- * @author Thiebault Laurent
- * @author Saab Mathieu
- */
-public class PromissoryNote extends Letter<MoneyContent> {
+*
+* PromissoryNote is the class which represents a money containing letter
+*
+* @author Coillaux Thibault
+* @author Thiebault Laurent
+* @author Saab Mathieu
+*/
+public class PromissoryNote extends NotRegisteredLetter<MoneyContent> {
 
 	/**
 	 * Constructor for a promissory note

@@ -1,6 +1,7 @@
 package lille1.letter;
 
 import lille1.global.Inhabitant;
+
 /**
  * 
  * AcknowledgmentLetter is a class which represents an acknowledgment sent by the receiver when he receives a registered letter
@@ -20,6 +21,7 @@ public class AcknowledgmentLetter extends SimpleLetter {
 	public AcknowledgmentLetter(String content, Inhabitant sender, Inhabitant receiver) {
 		super(content, sender, receiver);
 	}
+	
 	/**
 	 * A method that returns the description of the acknowlegment letter
 	 * @return the description of the acknowlegment letter

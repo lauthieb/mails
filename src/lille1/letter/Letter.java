@@ -2,6 +2,7 @@ package lille1.letter;
 
 import lille1.content.Content;
 import lille1.global.Inhabitant;
+
 /**
  * 
  * Letter is the class which represents any kind of letter. All other letters class will be an extension of this class
@@ -27,11 +28,13 @@ public abstract class Letter<C extends Content> {
 		this.sender = sender;
 		this.receiver = receiver;
 	}
+	
 	/**
 	 * A method which returns the cost of a letter
 	 * @return the cost of a letter
 	 */
 	public abstract int getCost();
+	
 	/**
 	 * A method which represents the action we do when the letter is delivered
 	 */
@@ -44,6 +47,7 @@ public abstract class Letter<C extends Content> {
 	public C getContent() {
 		return content;
 	}
+	
 	/**
 	 * A method which returns the inhabitant who sent the letter
 	 * @return an Inhabitant who sent the letter
@@ -51,6 +55,7 @@ public abstract class Letter<C extends Content> {
 	public Inhabitant getSender() {
 		return sender;
 	}
+	
 	/**
 	 * A method which returns the inhabitant who will receive the letter
 	 * @return an Inhabitant who will receive the letter
