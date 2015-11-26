@@ -17,5 +17,5 @@ Il existe plusieurs types de courriers ayant chacun un certain coût et des acti
 ## Contributeurs
 
 * [Laurent Thiebault](https://github.com/lauthieb)
-* [Thibault Coillaux](https://github.com/Crastchet)
+* [Thibault Coilliaux](https://github.com/Crastchet)
 * [Matthieu Saab](https://github.com/ExSoldat)

@@ -7,7 +7,7 @@ import lille1.global.Inhabitant;
  * 
  * NotRegisteredLetter is the class which represents any kind of letter which is not registered and not urgent
  * 
- * @author Coillaux Thibault
+ * @author Coilliaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */

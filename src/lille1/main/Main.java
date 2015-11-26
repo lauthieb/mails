@@ -15,7 +15,7 @@ import lille1.letter.UrgentLetter;
  * 
  * Main is the main class of the project, this is the simulation of a mailing system
  *
- * @author Coillaux Thibault
+ * @author Coilliaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */

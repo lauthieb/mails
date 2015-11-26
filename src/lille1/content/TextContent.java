@@ -3,7 +3,7 @@ package lille1.content;
  * 
  * TextContent is a class which represents a text composed letter
  * 
- * @author Coillaux Thibault
+ * @author Coilliaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */

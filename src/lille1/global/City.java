@@ -8,7 +8,7 @@ import lille1.letter.Letter;
  * 
  * City is a class which represents a city where inhabitants will echange letters
  *
- * @author Coillaux Thibault
+ * @author Coilliaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */

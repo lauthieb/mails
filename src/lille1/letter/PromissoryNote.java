@@ -7,7 +7,7 @@ import lille1.global.Inhabitant;
 *
 * PromissoryNote is the class which represents a money containing letter
 *
-* @author Coillaux Thibault
+* @author Coilliaux Thibault
 * @author Thiebault Laurent
 * @author Saab Mathieu
 */

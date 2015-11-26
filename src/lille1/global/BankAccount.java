@@ -3,7 +3,7 @@ package lille1.global;
  * 
  * BankAccount is a class which represents the bank account of a inhabitant
  * 
- * @author Coillaux Thibault
+ * @author Coilliaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */

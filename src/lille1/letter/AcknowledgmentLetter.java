@@ -6,7 +6,7 @@ import lille1.global.Inhabitant;
  * 
  * AcknowledgmentLetter is a class which represents an acknowledgment sent by the receiver when he receives a registered letter
  *
- * @author Coillaux Thibault
+ * @author Coilliaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */

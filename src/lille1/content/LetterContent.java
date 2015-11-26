@@ -5,7 +5,7 @@ import lille1.letter.Letter;
  * 
  * LetterContent is a class which represents letter contained inside a letter, like the urgent letters 
  *
- * @author Coillaux Thibault
+ * @author Coilliaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */

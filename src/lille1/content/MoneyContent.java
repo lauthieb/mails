@@ -3,7 +3,7 @@ package lille1.content;
  * 
  * MoneyContent is a content which is composed by an amount of money
  * 
- * @author Coillaux Thibault
+ * @author Coilliaux Thibault
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */
