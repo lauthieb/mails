@@ -23,7 +23,11 @@ public class PromissoryNoteTest extends LetterTest {
 
 	@Override
 	public void testDoAction() {
-		//TODO
+		assertEquals(5000, sender.getBankAccount().getAmount());
+		assertEquals(5000, receiver.getBankAccount().getAmount());
+		letter.doAction();
+		assertEquals(4877, sender.getBankAccount().getAmount());
+		assertEquals(5122, receiver.getBankAccount().getAmount());
 	}
 
 	@Override
