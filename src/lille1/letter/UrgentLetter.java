@@ -1,6 +1,5 @@
 package lille1.letter;
 
-import lille1.content.Content;
 import lille1.content.LetterContent;
 import lille1.global.Inhabitant;
 

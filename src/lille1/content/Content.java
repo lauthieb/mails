@@ -7,5 +7,6 @@ package lille1.content;
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */
-public class Content {
+public interface Content {
+	public String toString();
 }

@@ -7,7 +7,7 @@ package lille1.content;
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */
-public class MoneyContent extends Content {
+public class MoneyContent implements Content {
 	protected int amount;
 
 	/**

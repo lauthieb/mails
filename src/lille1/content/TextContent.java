@@ -7,7 +7,7 @@ package lille1.content;
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */
-public class TextContent extends Content{
+public class TextContent implements Content{
 	protected String text;
 
 	/**

@@ -9,7 +9,7 @@ import lille1.letter.Letter;
  * @author Thiebault Laurent
  * @author Saab Mathieu
  */
-public class LetterContent extends Content {
+public class LetterContent implements Content {
 	protected Letter<?> letter;
 	
 	/**
