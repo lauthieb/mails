@@ -31,8 +31,11 @@ public class SimpleLetterTest extends LetterTest {
 
 	@Override
 	public void testDoAction() {
-		// TODO Auto-generated method stub
-		
+		assertEquals(5000, sender.getBankAccount().getAmount());
+		assertEquals(5000, receiver.getBankAccount().getAmount());
+		this.letter.doAction();
+		assertEquals(5000, sender.getBankAccount().getAmount());
+		assertEquals(5000, receiver.getBankAccount().getAmount());
 	}
 
 }

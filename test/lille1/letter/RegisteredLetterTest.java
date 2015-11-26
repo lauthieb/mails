@@ -19,7 +19,11 @@ public class RegisteredLetterTest extends LetterTest{
 
 	@Override
 	public void testDoAction() {
-		//TODO
+		assertEquals(5000, sender.getBankAccount().getAmount());
+		assertEquals(5000, receiver.getBankAccount().getAmount());
+		letter.doAction();
+		assertEquals(5000, sender.getBankAccount().getAmount());
+		assertEquals(4999, receiver.getBankAccount().getAmount());
 	}
 
 	@Override
